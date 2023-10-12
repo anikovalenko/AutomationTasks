@@ -1,0 +1,56 @@
+JUnit
+
+
+@BeforeAll @AfterAll
+drvum en amenaskzbum u amenaverjum kanchvox methodneri vra.
+methodner@ peyq e linen static
+
+@Test
+sovorakan test methodneri vra
+
+@BeforeEach @AfterEach
+katarvum e yuraqanchyur @Test methodi kanchic araj u heto
+
+@DisplayName
+testi nkaragrutyun@ pakagceri mej
+run aneluc canki mej ktpe methodi amumi poxaren
+
+@Disabled
+method@ inaktivacnel hamar
+
+@EnabledOnOs
+@RepeatedTest
+@TimeOut
+
+@Order
+running order
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+dnel classi vra vor @Order ashxati
+
+
+
+---------------------------------------------------------------
+
+JUnit Jupiter Params
+@ParamerterizedTest(name = "...")
+el @Test annotaciayi kariq chka
+
+*** additional annotations ***
+
+@ValueSource(ints = "1,2,3")
+ete stringeri array e,sra het kareli e dnel
+@NullSource, @EmptySource, @NullAndEmptySource
+
+@MethodSource("methodName")
+kanchenq urish static method, vori veradardzrac arjeq@ tanq myus methodin
+static method@ petq e veradardzni cankacac iterable object
+
+@CsvSource()
+comma separated value
+@CsvSource({
+"put, some, values, here",
+"this is, the, second, row"
+})
+@ScvFileSource(files = "path")
+@ScvFileSource(resources = "path")
+
