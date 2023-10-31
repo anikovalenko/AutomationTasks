@@ -1,0 +1,22 @@
+id: By.cssSelector(tagName[id='someId'])     ///     By.cssSelector("#someId")
+class: By.cssSelector(tagName[class='className secondCLassName'])   ///    By.cssSelector(.className')
+name:  By.cssSelector(tagName[name='someName'])
+type:  By.cssSelector(tagName[type='someType'])
+href:  By.cssSelector(tagName[href='someHref'])
+src:   By.cssSelector(tagName[src='someSrc'])
+value: By.cssSelector(tagName[value='someValue'])
+title: By.cssSelector(tagName[title='someTitle'])
+ancestor descendant: ul li
+Child Selector: parent > child
+Pseudo-Classes:   tagName:hover // tagName.className:hover // tagName[name='name']:hover
+                  /// :hover /// :active /// :focus /// :nth-child(n)
+                  By.cssSelector("ul li:last-child") /// By.cssSelector("ul li:first-child")
+                  By.cssSelector("div > span:nth-child(2)")  //child's id
+Pseudo-Elements:  tagName::before
+                  /// ::before /// ::after /// ::first-line /// ::first-letter
+
+
+
+AND:     By.cssSelector("a[href='somehref'][name='somename']")
+OR:      By.cssSelector("a[href='somehref']:not([name='somename']), a[name='somename']:not([href='somehref'])")
+

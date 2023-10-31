@@ -17,18 +17,23 @@ public class ResponseUtils {
         return getResponse().extract().statusCode();
     }
 
-    public static void validateResponseByJsonSchema() {
+    public static void validateResponseByJsonSchema(String filePath) {
         JsonSchemaFactory jsonSchemaFactory = JsonSchemaFactory.newBuilder()
                 .setValidationConfiguration(
                         ValidationConfiguration.newBuilder()
                                 .setDefaultVersion(SchemaVersion.DRAFTV4)
                                 .freeze()).freeze();
         getResponse().assertThat()
-                .body(matchesJsonSchemaInClasspath(
-                        "src/test/resources/validator_schemas/getAllPostsValidatorSchema.json")
+                .body(matchesJsonSchemaInClasspath(filePath)
                 .using(jsonSchemaFactory));
+    }
 
+    public static <T> T getObjectByJsonString(Class<T> type) {
+        return getResponse().extract().as(type);
+    }
 
+    public static String getStringValueByJsonPath(String jsonpath) {
+        return getResponse().extract().jsonPath().getString(jsonpath);
     }
 
 }

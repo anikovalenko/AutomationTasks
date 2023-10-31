@@ -51,6 +51,6 @@ comma separated value
 "put, some, values, here",
 "this is, the, second, row"
 })
-@ScvFileSource(files = "path")
-@ScvFileSource(resources = "path")
+@CsvFileSource(files = "path")
+@CsvFileSource(resources = "path")
 

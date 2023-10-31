@@ -1,0 +1,53 @@
+Positional Predicates:
+
+last(): Selects the last node in the current node set.
+        //*[@id='lastElement']/span[last()]
+position(): Returns the position of the current node in the node set.
+        (//input[@type='checkbox'])[position()=2]
+count(): Returns the number of nodes in the current node set.
+        count(//a)
+
+**************************************************************************************************************
+Node Name and Namespaces:
+name(): Returns the name of the current node.
+        name(//*[@class='example-class'])
+local-name(): Returns the local part of the name of the current node.
+        local-name(//*[contains(@class,'example')])
+namespace-uri(): Returns the namespace URI of the current node.
+        //*[local-name()='elementName' and namespace-uri()='http://www.w3.org/1999/xhtml']
+string(): Converts the current node to its string value.
+        string(//div[@id='example'])
+concat(): Concatenates two or more strings.
+        concat('Hello', ' ', 'World')
+contains(): Checks if a string contains another string.
+        //*[contains(text(),'Login')]
+starts-with(): Checks if a string starts with another string.
+        //input[starts-with(@id,'username')]
+substring-before(): Returns the substring before a specified delimiter.
+        substring-before('example@domain.com', '@')
+substring-after(): Returns the substring after a specified delimiter.
+        substring-after('example@domain.com', '@')
+substring(): Returns a specified portion of a string.
+        substring('Hello World', 7, 5)
+string-length(): Returns the length of a string.
+        string-length('Hello World')
+normalize-space(): Removes leading and trailing white spaces and collapses multiple spaces to a single space.
+        normalize-space(' Hello World ')
+translate(): Replaces a set of characters with another set in a string.
+        translate('hello', 'el', 'xy')
+
+**************************************************************************************************************
+Boolean Functions:
+boolean(): Converts a value to a boolean.
+        boolean(//a[text()='Click Me'])
+not(): Returns the negation of a boolean value.
+        not(//input[@type='checkbox'])
+true(): Returns true.
+false(): Returns false.
+
+**************************************************************************************************************
+Number Functions:
+number(): Converts a value to a number.
+        number(//span[@class='price'])
+sum(): Returns the sum of a node set.
+        sum(//table//tr/td[2])

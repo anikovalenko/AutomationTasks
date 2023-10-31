@@ -7,18 +7,20 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class getAllPostsPositiveTest {
-
+    public static final String PATH_TO_VALIDATOR_FILE =
+            "src/test/resources/apiResourceFiles/validator_schemas/getAllPostsValidatorSchema.json";
 
     @Test
-    public void validateStatusCode(){
+    public void validateStatusCode() {
         RequestUtils.get();
         int result = ResponseUtils.getStatusCode();
         Assertions.assertEquals(200, result);
     }
 
     @Test
-    public  void validateResponseByJsonSchema(){
+    public void validateResponseByJsonSchema() {
         RequestUtils.get();
-        ResponseUtils.getResponse();
+        ResponseUtils.validateResponseByJsonSchema(PATH_TO_VALIDATOR_FILE);
+
     }
 }

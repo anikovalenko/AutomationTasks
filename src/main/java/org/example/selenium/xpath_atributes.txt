@@ -1,0 +1,6 @@
+id: Selects elements with a specific id attribute.
+class: Selects elements with a specific class attribute.
+name: Selects elements with a specific name attribute.
+type: Selects elements with a specific type attribute.
+href: Selects elements with a specific href attribute.
+src: Selects elements with a specific src attribute.
